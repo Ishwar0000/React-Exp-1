@@ -1,29 +1,32 @@
-import React from 'react';
-import ProductCard from './main';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
+import ProductCard from './ProductCard'
 
 function App() {
+  const [count, setCount] = useState(0)
+
   const products = [
-    { name: "Wireless Mouse", price: 25.99, status: "In Stock" },
-    { name: "Keyboard", price: 45.5, status: "Out of Stock" },
-    { name: "Monitor", price: 199.99, status: "In Stock" },
+    { name: 'Wireless Mouse', price: 25.99, inStock: true },
+    { name: 'Mechanical Keyboard', price: 89.99, inStock: false },
+    { name: 'HD Monitor', price: 199.99, inStock: true }
   ];
 
   return (
-    <div className="app-container">
-      <h2>Products List</h2>
-      <div className="product-list">
-        {products.map((product, index) => (
+    <>
+      <h1 style={{ textAlign: 'center', marginTop: '24px' }}>Product List</h1>
+      
+      <div style={{ display: 'flex', gap: '16px', marginTop: '32px', justifyContent: 'center' }}>
+        {products.map((product, idx) => (
           <ProductCard
-            key={index}
+            key={idx}
             name={product.name}
             price={product.price}
-            status={product.status}
+            inStock={product.inStock}
           />
         ))}
       </div>
-    </div>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App
