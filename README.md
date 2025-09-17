@@ -1,1 +1,1 @@
-# React-Exp-1
+This Repo contains 4 files of React Exp:-1 of "Create a React component named ProductCard that accepts props for product name, price, and stock status. The component should display all three details clearly, for example in a card layout or a simple styled box. You should demonstrate how different product data can be passed into the component and rendered dynamically without changing the component code." 
